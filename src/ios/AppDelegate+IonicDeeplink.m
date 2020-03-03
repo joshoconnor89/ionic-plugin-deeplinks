@@ -62,6 +62,12 @@ static NSString *const PLUGIN_NAME = @"IonicDeeplinkPlugin";
 
       // Send notice to the rest of our plugin that we didn't handle this URL
       [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"IonicLinksUnhandledURL" object:[url absoluteString]]];
+    
+      NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
+      NSString *intervalString = [NSString stringWithFormat:@"%f", today];
+        
+      NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.mango.clickupdev.shareextension"];
+      [userDefaults setObject:intervalString forKey:@"dismissedShareExtension"];
     }
 
     return YES;
