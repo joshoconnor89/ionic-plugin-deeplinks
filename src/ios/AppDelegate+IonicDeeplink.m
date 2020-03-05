@@ -68,6 +68,9 @@ static NSString *const PLUGIN_NAME = @"IonicDeeplinkPlugin";
         
       NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.mango.clickupdev.shareextension"];
       [userDefaults setObject:intervalString forKey:@"dismissedShareExtension"];
+
+      NSUserDefaults *prodUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.clickup.app.shareextension"];
+      [prodUserDefaults setObject:intervalString forKey:@"dismissedShareExtension"];
     }
 
     return YES;
